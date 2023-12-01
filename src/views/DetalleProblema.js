@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import react from "react";
 import { useParams } from "react-router-dom";
 import { getProblemaById, getImages, toggleLike } from "../services/Problemas";
 import { UserContext } from "../contexto/UserContext";
@@ -8,14 +8,14 @@ import "./detalle.css";
     
 export const DetalleProblema = () => {
     const { problemasid: id } = useParams();
-    const { isloggedUser, loggedUser, isAuthorized, getLikes } = useContext(UserContext);
-    const [problema, setProblema] = useState({});
-    const [imagenes, setImagenes] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [likes, setLikes] = useState(0);
-    const [isLiked, setIsLiked] = useState(false);
+    const { isloggedUser, loggedUser, isAuthorized, getLikes } = react.useContext(UserContext);
+    const [problema, setProblema] = react.useState({});
+    const [imagenes, setImagenes] = react.useState([]);
+    const [isLoading, setIsLoading] = react.useState(true);
+    const [likes, setLikes] = react.useState(0);
+    const [isLiked, setIsLiked] = react.useState(false);
 
-    useEffect(() => {
+    react.useEffect(() => {
         const loadData = async () => {
             const { data } = await getProblemaById(id);
             setProblema(data);
@@ -33,7 +33,7 @@ export const DetalleProblema = () => {
         loadData();
     }, [id]);
 
-    useEffect(() => {
+    react.useEffect(() => {
         const seeLikes = async () => {
             const token = isloggedUser()?.token;
             if (token !== undefined) {

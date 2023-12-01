@@ -7,8 +7,8 @@ import { useQuery } from "../../hooks/useQuery";
 import "./index.css";
 import { UserContext } from "../../contexto/UserContext";
 
-export const Problemas = () => {
-  const [problemas, setProblemas] = useState([]);
+export const Comidas = () => {
+  const [Comidas, setComidas] = useState([]);
   const [imagenProblema, setImagenProblema] = useState("");
   const query = useQuery();
   const [filter, setFilter] = useState((query.get("search") || "").toLocaleLowerCase());
@@ -17,8 +17,8 @@ export const Problemas = () => {
   const navigate = useNavigate();
 
   const getData = async () => {
-    const { data } = await getProblemas();
-    setProblemas(data.slice(0, 5));
+    const { data } = await getComidas();
+    setComidas(data.slice(0, 5));
   };
 
   useEffect(() => {
@@ -92,7 +92,7 @@ export const Problemas = () => {
   }, []);
 
   const showDetail = (id) => {
-    navigate(`/problemas/${id}`);
+    navigate(`/comida/${id}`);
   };
 
   return (
@@ -102,7 +102,7 @@ export const Problemas = () => {
           <div>
             {user.isAuthorized() && (
               <div>
-                <Link to={`/createproblema`}>
+                <Link to={`/createcomida`}>
                   <button className="create-problema">Crear problema</button>
                 </Link>
               </div>)}
@@ -122,7 +122,7 @@ export const Problemas = () => {
       </header>
       <div className="cont s--inactive">
         <div className="cont__inner">
-          {problemas.map((problema, index) => (
+          {Comidas.map((problema, index) => (
             <div
               className="el"
               key={index}
@@ -132,16 +132,16 @@ export const Problemas = () => {
               <div className="el__overflow">
                 <div
                   className="el__go-detail"
-                  onClick={() => showDetail(problema.id)}
+                  onClick={() => showDetail(Comida.id)}
                 >Ir al Detalle
                 </div>
                 <div className="el__inner">
                   <div className="el__bg"></div>
                   <div className="el__preview-cont">
-                    <h2 className="el__heading">{problema.title}</h2>
+                    <h2 className="el__heading">{Comida.title}</h2>
                   </div>
                   <div className="el__content">
-                    <div className="el__text">{problema.description}</div>
+                    <div className="el__text">{Comida.description}</div>
                     <div className="el__likes">Gente a la que le interesa: {problema.likes}</div>
                     <div className="el__estado">{problema.estado=== 1 ? "Pendiente ❌" : "Resuelto ✅"}</div>
                     <div className="el__close-btn" onClick={handleCloseClick} />

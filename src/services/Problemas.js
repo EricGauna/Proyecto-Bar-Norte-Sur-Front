@@ -1,10 +1,10 @@
 import axios from "axios";
 import swal from "sweetalert";
 
-export const getProblemas = async () => {
+export const getComidads = async () => {
   try {
     const { data } = await axios.get(
-      "http://localhost:8080/problemas"
+      "http://localhost:8080/comidas"
     );
     return data;
   } catch (e) {
@@ -15,7 +15,7 @@ export const getProblemas = async () => {
 export const createProblemas = async (formData, config) => {
   try {
     const { data } = await axios.post(
-      "http://localhost:8080/createproblema",
+      "http://localhost:8080/createcomida",
       formData, config
 
     ); 
@@ -25,10 +25,10 @@ export const createProblemas = async (formData, config) => {
   }
 }
 
-export const getProblemaById = async (id) => {
+export const getComidaId = async (id) => {
   try {
     const { data } = await axios.get(
-      `http://localhost:8080/problemas/${id}`
+      `http://localhost:8080/comidas/${id}`
     )
     return data;
   } catch (e) {
