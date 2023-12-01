@@ -1,0 +1,152 @@
+.Slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.titulo-edit{
+    user-select: none;
+
+}
+.formulario-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 100%;
+  margin-top: rem;
+  align-items: center;
+  min-height: 10rem;
+}
+
+.formulario-edit div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 70vh;
+}
+
+.formulario-edit label {
+  font-size: 1.2rem;
+}
+
+.formulario-edit input[type="text"],
+.formulario-edit textarea {
+  padding: 0.4rem;
+  border-radius: 25px;
+  width: 76%;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+}
+
+.formulario-edit input[type="file"] {
+  display: none;
+}
+
+.formulario-edit label[for="file"]::before {
+  content: "Seleccionar archivo";
+  display: inline-block;
+  padding: 0.4rem;
+  border-radius: 25px;
+  width: 100%;
+  text-align: center;
+  background-color: #c9c9c9;
+  cursor: pointer;
+}
+
+.formulario-edit label[for="file"]::after {
+  content: "";
+  display: block;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+.formulario-edit input[type="file"]:focus + label[for="file"]::before {
+  background-color: #4b4bff;
+  color: #fff;
+}
+
+.formulario-edit .previewContainer-edit {
+  display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.formulario-edit .preview-edit {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+    border-radius: 20px;
+
+}
+
+#description {
+  height: 200px;
+  resize: none;
+}
+
+.form-container-edit {
+  justify-content: center;
+  padding-top: 1.5rem;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: #000000;
+  margin-top: 3.5rem
+}
+
+.registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  padding: 0.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(62, 41, 146, 0.85) 0%,
+    rgba(62, 41, 146, 0) 100%
+  );
+  color: #fff;
+  cursor: pointer;
+}
+
+.registro:hover {
+  background-color: #3a3aff;
+}
+
+#name {
+  margin-bottom: 1rem;
+}
+
+.button-delete{
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 0.8rem;
+  color: #fff;
+  position: absolute;
+  right: 2.2rem;
+   background: linear-gradient(
+    180deg,
+    rgba(62, 41, 146, 0.85) 0%,
+    rgba(62, 41, 146, 0) 100%
+  );
+}
+
+.button-status{
+ cursor: pointer;
+  border-radius: 25px;
+  padding: 0.8rem;
+  color: #fff;
+  position: absolute;
+  right: 2rem;
+  top:21.5rem;
+   background: linear-gradient(
+    180deg,
+    rgba(62, 41, 146, 0.85) 0%,
+    rgba(62, 41, 146, 0) 100%
+  );
+}

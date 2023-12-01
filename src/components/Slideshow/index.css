@@ -1,0 +1,117 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-image-wrapper:hover {
+transform: translateY(-35px) scale(1.1);
+}
+
+.slider-image-wrapper {
+  z-index: 999;
+  position: relative;
+  width: 1300px;
+  height: 600px;
+  margin-bottom: 10px;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform 0.33s ease;
+  shape-rendering:geometricPrecision;
+}
+
+.slider-image {
+  transform: scale(2hnn);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-clip: content-box;
+}
+
+.slider-image div {
+  width: 100%;
+  height: 100%;
+  background: center / cover no-repeat;
+}
+
+.slider-controls button {
+  z-index: 999;
+  padding: 0;
+  width: 33px;
+  height: 33px;
+  border: none;
+  opacity: 65%;
+  background-color: black;
+  cursor: pointer;
+  transition: 0.22s;
+  border-radius: 50%;
+}
+
+.Previous {
+  position: absolute;
+  background-image: url('/src/Images/Arrowprev.svg');
+  background-size: cover;
+  top: 50%;
+  left: 2%;
+}
+
+.Next {
+  position: absolute;
+  background-image: url('/src/Images/Arrow.svg');
+  background-size: cover;
+  top: 50%;
+  right: 2%;
+}
+
+.slider-controls button:hover {
+  transform: scale(1.33);
+  opacity: 100%;
+}
+
+.slider-controls button:active {
+  transform: scale(1);
+}
+
+.slider-image-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* DETALLES */
+
+
+.Detalle-Barrio, .Detalle-Ciudad {
+  z-index: 99;
+  font-size: 2rem;
+  position: absolute;
+  top: 77%;
+  width: auto;
+  left: 5%;
+  opacity: 69%;
+  text-rendering: geometricPrecision;
+}
+
+.Detalle-Barrio {
+  font-style: italic;
+  top: 83%;
+  font-size: 1.4rem;
+}
+
+.Detalle-Description {
+  z-index: 99;
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-top: 1.8vh;
+  width: 1300px;
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+.Text-Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
